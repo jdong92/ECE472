@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 #include<math.h>
+#include<string.h>
 
 double frexp_double(double x);
 double convert(const char binary[]);
@@ -12,29 +13,27 @@ main()
 	
     	//frexp_double(8.0);
 	char bin[64];
-	long num;
 	printf("Enter in a double bit pattern: \n");
 	scanf("%s", bin);
 	printf("Entered: %s \n", bin);
 	printf("Decimal number is :: %f \n",convert(bin));
 	frexp_double(convert(bin));
 	
-	printf("Enter in a long bit patter: \n");
-
-
-}
-
-
-long convertLong(char x[64]){
-	int i;
+	printf("Enter in a long bit pattern: \n");
+	scanf("%s", bin);
+	int i,number;
 	int len;
-	int r;
+	
+	len = strlen(bin);
 	
 	for(i = 0; i < len; i++)
     {
-        r = r * 2 + (x[i] == '1' ? 1 : 0);
+        number = number * 2 + (bin[i] == '1' ? 1 : 0);
     }
 	
+	printf("Value: %d \n",number);
+
+
 }
 
 double frexp_double(double x){
