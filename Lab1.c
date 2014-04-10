@@ -5,6 +5,7 @@
 
 double frexp_double(double x);
 double convert(const char binary[]);
+long convertLong(char x[64]);
 
 main()
 {
@@ -21,6 +22,19 @@ main()
 	printf("Enter in a long bit patter: \n");
 
 
+}
+
+
+long convertLong(char x[64]){
+	int i;
+	int len;
+	int r;
+	
+	for(i = 0; i < len; i++)
+    {
+        r = r * 2 + (x[i] == '1' ? 1 : 0);
+    }
+	
 }
 
 double frexp_double(double x){
